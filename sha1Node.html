@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+
+<!--
+<script type="text/javascript" src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha1.js"></script>
+<script type="text/javascript" src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js"></script>
+<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/core-min.js"></script>
+<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/enc-utf16-min.js"></script>
+<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/enc-base64-min.js"></script>
+-->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/core-min.js"></script>
+<!--
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/enc-utf16-min.js"></script>
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/enc-base64-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/sha1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/aes.js"></script>
+
+</head>
+<body>
+<button onclick="myFunction()">Try it</button>
+<input class="span8" id="ENCR" type="text" value="" size="75">
+<input class="span8" id="PREDECR" type="text" value="" size="75">
+<input class="span8" id="DECR" type="text" value="" size="75">
+
+<script>
+//var CryptoJS=require ('crypto-js');
+function myFunction() {
+
+
+var encr=(CryptoJS.AES.encrypt("barEdge3etH", "762668bos")); 
+
+/*
+//encr = "U2FsdGVkX19uldeyYSIFUmn9GUIbHyBO/IX4xbPJ3+Q=";
+
+var predecr = (CryptoJS.AES.decrypt(encr, "762668bos"));
+
+//alert((encr.key) + "\n " + encr.iv);
+//alert("Key: " + (encr.key) + "\n IV:" + encr.iv);
+
+
+var predecr1 = (CryptoJS.AES.decrypt(encr, encr.key, {iv : encr.iv}));
+
+var decr = predecr1.toString(CryptoJS.enc.Utf8);
+    var encrypt = document.getElementById("ENCR");
+    var predecrypt = document.getElementById("PREDECR");
+    var decrypt = document.getElementById("DECR");
+	
+	encrypt.value = encr;
+	predecrypt.value = predecr;
+	decrypt.value = decr;
+
+
+
+    var words  = CryptoJS.enc.Base64.parse(encrypt.value); //'U2FsdGVkX19uldeyYSIFUmn9GUIbHyBO/IX4xbPJ3+Q='); //SGVsbG8sIFdvcmxkIQ==
+	
+    var base64 = CryptoJS.enc.Base64.stringify(words);	
+	alert((words) + "\n" + base64);
+*/
+
+	var hash = CryptoJS.SHA1("762668bos:teradyne.com");
+	var hashbase64 = CryptoJS.enc.Base64.stringify(hash);
+	alert("Sha1: " + hash + "\nbase64: " + hashbase64);
+	
+}
+</script>
+
+</body>
